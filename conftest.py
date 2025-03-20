@@ -12,7 +12,8 @@ def clean_screenshot_folder():
             file_path = os.path.join(SCREENSHOTS_DIR, file_name)
             if os.path.isfile(file_path):
                 os.remove(file_path)
-
+    else:
+        os.makedirs(SCREENSHOTS_DIR)
     yield
 
 
@@ -25,4 +26,3 @@ def clean_allure_results_folder():
                 os.remove(file_path)
 
     yield
-
